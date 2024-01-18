@@ -5,7 +5,7 @@ A PCB that combines a Raspberry Pi running [PiTubeDirect](https://github.com/hog
 ## Notes 
 
 - It's currently untested, and the PCB will likely change in future.
-- The board indicates the license is CC BY-NC-SA, however I've since discovered that derivatives must be licensed under the same terms. This will be fixed on the silkscreen in a future revision.
+- The board indicates the license is CC BY-NC-SA, however I've since discovered that derivatives must be licensed under the same terms, i.e the board must also be licensed under GPL 3.0. This will be fixed on the silkscreen in a future revision.
 
 ## License
 
