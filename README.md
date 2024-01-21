@@ -14,7 +14,7 @@ PiTubeDirect *toggles* the Pi's onboard LED when the Tube is accessed, however I
 
 To use this feature you'll need to program the ATTiny and use the [Indigo Alpha 4](https://github.com/hoglet67/PiTubeDirect/releases/tag/indigo-alpha4) revision of PiTubeDirect which supports re-mapping the activity to another GPIO.  
 
-Add the following to the end of `cmdline.txt`: 
+Add the following to the end of `cmdline.txt`:   
 `bcm2708.disk_led_gpio=16`
 
 This is somewhat experimental, the code is crude, and I'm not entirely sure if its detecting every edge when the Tube is at full tilt, but it makes the LED blink convincingly   so its good enough for my requirements.  
