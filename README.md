@@ -1,4 +1,3 @@
-
 # BBCWinchesterPro
 
 A PCB that combines a Raspberry Pi running [PiTubeDirect](https://github.com/hoglet67/PiTubeDirect) and a J.G Harston's [IDE Interface](https://mdfs.net/Info/Comp/BBC/IDE/), intended to emulate the 6502 2nd Processor and Winchester Hard Disk required to run a Level 3 Econet Fileserver on a BBC Micro Model B.  
@@ -6,6 +5,8 @@ A PCB that combines a Raspberry Pi running [PiTubeDirect](https://github.com/hog
 <img src="images/BBCWinchesterPro-Assembled.jpg" width="400">
 
 The current revision was designed to test if the theory works rather than a finished product. The long term goal is to place it in a suitably 80's looking enclosure which will probably require some changes to the overall size and mounting holes but perhaps in the meantime the schematics and PCB will be useful to someone.
+
+The schematic is included as a [PDF](Schematic.pdf)
 
 ## Whats the ATTiny MCU for?
 
@@ -61,6 +62,4 @@ If you don't want to bother with it, you can bridge pins 2 and 3 of the U5 footp
 - The PCB is licensed under GPL 3.0
 - The [PiTubeDirect](https://github.com/hoglet67/PiTubeDirect) interface schematic and firmware is licensed under GPL 3.0
 - The [IDE interface](https://mdfs.net/Info/Comp/BBC/IDE/) was designed by J.G Harston and [sprow](http://www.sprow.co.uk/) and anyone is permitted to use the design with acknowledgement.
-
-
 
