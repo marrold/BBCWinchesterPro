@@ -1,6 +1,7 @@
+
 # BBCWinchesterPro
 
-A PCB that combines a Raspberry Pi running [PiTubeDirect](https://github.com/hoglet67/PiTubeDirect) and a J.G Harston's [IDE Interface](https://mdfs.net/Info/Comp/BBC/IDE/), intended to emulate the 6502 2nd Processor and Winchester Hard Disk required to run a Level 3 Econet Fileserver on a BBC Micro Model B.  
+A PCB that combines a Raspberry Pi running [PiTubeDirect](https://github.com/hoglet67/PiTubeDirect) and a J.G Harston's [IDE Interface](https://mdfs.net/Info/Comp/BBC/IDE/), intended to emulate the 6502 2nd Processor and Winchester Hard Disk required to run a Level 3 Econet Fileserver on a BBC Micro Model B.
 
 <img src="images/BBCWinchesterPro-Assembled.jpg" width="400">
 
@@ -10,29 +11,32 @@ The schematic is included as a [PDF](Schematic.pdf)
 
 ## Whats the ATTiny MCU for?
 
-PiTubeDirect *toggles* the Pi's onboard LED when the Tube is accessed, however I'd like an external LED to pulse with activity. The ATTiny detects a rising or falling edge and pulses the LED for 50ms.  
+PiTubeDirect *toggles* the Pi's onboard LED when the Tube is accessed, however I'd like an external LED to pulse with activity. The ATTiny detects a rising or falling edge and pulses the LED for 50ms.
 
-To use this feature you'll need to program the ATTiny and use the [Indigo Alpha 4](https://github.com/hoglet67/PiTubeDirect/releases/tag/indigo-alpha4) revision of PiTubeDirect which supports re-mapping the activity to another GPIO.  
+To use this feature you'll need to program the ATTiny and use the [Indigo Alpha 4](https://github.com/hoglet67/PiTubeDirect/releases/tag/indigo-alpha4) revision of PiTubeDirect which supports re-mapping the activity to another GPIO.
 
-Add the following to the end of `cmdline.txt`:   
+Add the following to the end of `cmdline.txt`:
 `bcm2708.disk_led_gpio=16`
 
-This is somewhat experimental, the code is crude, and I'm not entirely sure if its detecting every edge when the Tube is at full tilt, but it makes the LED blink convincingly   so its good enough for my requirements.  
+This is somewhat experimental, the code is crude, and I'm not entirely sure if its detecting every edge when the Tube is at full tilt, but it makes the LED blink convincingly   so its good enough for my requirements.
 
 If you don't want to bother with it, you can bridge pins 2 and 3 of the U5 footprint, indicated on the silkscreen.
 
 ## Usage
 
+- It's *highly recommended* to use a 2GB CF Card as modified tools exist to deal with a disc this size
 - For information on setting up and using PiTubeDirect, see the projects detailed [Wiki](https://github.com/hoglet67/PiTubeDirect/wiki)
 - To use the IDE interface you'll need version [ADFS  v1.33](https://mdfs.net/System/ROMs/Filing/Disk/Acorn/ADFS133) which has been patched for IDE support.
-- I also recommend using patched versions of HDInit and WFSInit that can handle larger discs. 
+- I also recommend using patched versions of [HDInit](https://mdfs.net/Info/Comp/BBC/IDE/HDInit) and [WFSInit](https://stardot.org.uk/forums/viewtopic.php?p=411297#p411297) that can handle larger discs.
+- For instructions on formatting the CF card see the [Wiki](https://github.com/marrold/BBCWinchesterPro/wiki/Formatting-the-Hard-Disk)
+- For instructions on setting up the Econet partition, also see the [Wiki](https://github.com/marrold/BBCWinchesterPro/wiki/Initialising-the-Disk-for-a-Level-3-Econet-Fileserver)
 
 ## Parts Required
 
 - [PCI slot IDE to Compact Flash Adapter](https://www.amazon.co.uk/gp/product/B0913811PP)
 - Raspberry Pi + SD Card
-- 5x 0.1uF ceramic capacitors with a 5mm pitch 
-- 2x 22uF electrolitic capacitors with a 2mm pitch
+- 5x 0.1uF ceramic capacitors with a 5mm pitch
+- 2x 22uF electrolytic capacitors with a 2mm pitch
 - 3x 1k 1/4w resistors
 - 3x LEDs and suitable 1/4w resistors
 - 2x [SN74LVC245AN](http://d.digikey.com/dc/mn-w0iJh4uEE_bUitNCuXpPSTLmwSDrmPaa_ksuLmn07WQWvHI6vieAM8l8Rz71y9-o2iqNxD_lrRHs2f6p78UOWSMZi80Re0OX4QjTHXhzXzyCP1n-WYmlf5x2yjzHYfHzZC5O6tAVstkKuOzoHwbgnRBw45ztk-WaaeLEz83g=/MDI4LVNYSy01MDcAAAGQeWyQoGkputw3nr4VpWGkNsxv4PB3VXIkOks0B2FcjYxorqdoh39jE906jV2IX0SxzNbf8sc=)
@@ -47,7 +51,7 @@ If you don't want to bother with it, you can bridge pins 2 and 3 of the U5 footp
 -  1x 34 Pin, 2.54 pitch  Male Shrouded + Keyed connector
 - 1x 40 Pin, 2.54 pitch Female connector with key
 - 1x 40 Pin, 2.54 pitch  Female connector without key. (Or get 2 of the above)
-- 2.54 pitch male header pins - a few 
+- 2.54 pitch male header pins - a few
 - 2x Jumpers
 - Nylon PCB standoffs - some
 
